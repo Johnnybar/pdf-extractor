@@ -16,19 +16,27 @@ const UploadUi = () => {
     setIsSelected(true);
   };
   return (
-    <div>
-      <input type="file" name="file" onChange={handleChange} />
-      {isSelected && selectedFile ? (
-        <div>
-          <p>Filename: {selectedFile.name}</p>{" "}
+    <div className="upload-ui container">
+      <div className="row">
+        <div className="col-sm-12 text-center">
+          <h1 className="upload-ui__top-heading">PDF Extractor</h1>
+
+          <input type="file" name="file" onChange={handleChange} />
+          {isSelected && selectedFile ? (
+            <div>
+              <p>Filename: {selectedFile.name}</p>{" "}
+            </div>
+          ) : (
+            <p>Select a file to show details</p>
+          )}
+          <div>
+            <button>Submit</button>
+          </div>
         </div>
-      ) : (
-        <p>Select a file to show details</p>
-      )}
-      <div>
-        <button>Submit</button>
+        <div className="upload-ui__list">
+          {extractedText && <OutputText output={extractedText} />}
+        </div>
       </div>
-      {extractedText && <OutputText output={extractedText} />}
     </div>
   );
 };
