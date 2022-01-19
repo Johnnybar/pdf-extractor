@@ -1,0 +1,13 @@
+//color variables
+
+$pdf-extractor-light-blue: #e8eff8;
+$pdf-extractor-blue: #124172;
+$pdf-extractor-black: black;
+$pdf-extractor-white: white;
+
+//functions
+
+@function toRem($value) {
+  $remValue: calc($value / 16) + rem;
+  @return $remValue;
+}

@@ -1,0 +1,96 @@
+@import "utilities";
+
+* {
+  color: $pdf-extractor-blue;
+}
+//header
+.header {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: toRem(100);
+  background: $pdf-extractor-light-blue;
+  &__logo {
+    margin: toRem(10);
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+//content-wrapper
+
+.content-wrapper {
+  padding: toRem(60) 0 toRem(30) 0;
+  background-color: $pdf-extractor-light-blue;
+  width: 100%;
+  min-height: 95vh;
+}
+
+//UI
+
+.upload-ui {
+  &.container {
+    max-width: toRem(960);
+    background-color: $pdf-extractor-white;
+    padding: toRem(40);
+  }
+
+  &__top-heading {
+    margin: toRem(40) 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+
+    /*
+  adds lines to sides of heading
+*/
+    &::before,
+    &::after {
+      position: absolute;
+      top: toRem(23);
+      overflow: hidden;
+      width: 50%;
+      height: toRem(1);
+      content: "\a0";
+      background-color: $pdf-extractor-blue;
+    }
+    &::before {
+      margin-left: -50%;
+      text-align: right;
+    }
+  }
+
+  &__utility-btn {
+    margin: toRem(10) 0;
+  }
+}
+input[type="file"] {
+  display: none;
+}
+
+.custom-input {
+  border: toRem(1) solid $pdf-extractor-blue;
+  display: inline-block;
+  padding: toRem(6) toRem(12);
+  cursor: pointer;
+}
+
+.output-text {
+  &__container {
+    border: toRem(1) solid $pdf-extractor-blue;
+    padding: toRem(30);
+  }
+}
+//footer
+
+.footer {
+  background-color: $pdf-extractor-light-blue;
+  &__text {
+    font-size: toRem(16);
+    color: $pdf-extractor-blue;
+    padding: 0 toRem(5) toRem(50) toRem(5);
+    margin: 0;
+    height: 5vh;
+  }
+}
