@@ -6,11 +6,12 @@ const UploadUi = () => {
   const [isSelected, setIsSelected] = useState<Boolean>(false);
   const [selectedFile, setSelectedFile] = useState<File>();
   const [extractedText, setExtractedText] = useState<Optional<string>>();
+  const [error, setError] = useState<Optional<string>>(null);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     //to prevent typescript null value error
     if (!event.target.files) return;
-
+    setError(null);
     setSelectedFile(event.target.files[0]);
     setIsSelected(true);
   };
@@ -22,6 +23,7 @@ const UploadUi = () => {
       },
       (error: string) => {
         console.error(error);
+        setError(`File could not be uploaded due to this error: ${error}`);
       }
     );
   };
@@ -47,9 +49,14 @@ const UploadUi = () => {
     <div className="upload-ui container">
       <div className="row">
         <div className="col-sm-12 text-center">
-          <h1 className="upload-ui__top-heading">PDF Extractor</h1>
+          <h1 className="upload-ui__top-heading">PDF to Text</h1>
           <label className="custom-input">
-            <input type="file" name="file" onChange={handleChange} />
+            <input
+              type="file"
+              name="file"
+              data-testid="upload-input"
+              onChange={handleChange}
+            />
             Upload PDF to Extract Text
           </label>
 
@@ -62,6 +69,7 @@ const UploadUi = () => {
           ) : (
             <p>Select a file to show details</p>
           )}
+          {error && <div>{error}</div>}
           <div>
             <button
               className="btn btn-primary upload-ui__utility-btn"
