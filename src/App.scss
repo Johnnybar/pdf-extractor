@@ -3,6 +3,7 @@
 * {
   color: $pdf-extractor-blue;
 }
+
 //header
 .header {
   position: absolute;
@@ -65,6 +66,8 @@
     margin: toRem(10) 0;
   }
 }
+
+//hide input field and replace with custom input field
 input[type="file"] {
   display: none;
 }
@@ -76,12 +79,18 @@ input[type="file"] {
   cursor: pointer;
 }
 
+//Output element
+
 .output-text {
   &__container {
     border: toRem(1) solid $pdf-extractor-blue;
     padding: toRem(30);
   }
+  &__text {
+    overflow: auto;
+  }
 }
+
 //footer
 
 .footer {

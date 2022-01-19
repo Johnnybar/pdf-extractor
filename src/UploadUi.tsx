@@ -8,6 +8,7 @@ const UploadUi = () => {
   const [extractedText, setExtractedText] = useState<Optional<string>>();
   const [error, setError] = useState<Optional<string>>(null);
 
+  //after upload, get file and display some data, remove possible errors
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     //to prevent typescript null value error
     if (!event.target.files) return;
@@ -16,6 +17,7 @@ const UploadUi = () => {
     setIsSelected(true);
   };
 
+  //after submission, set output text and show error element if incorrect file format
   const handleSubmission = () => {
     getText(selectedFile).then(
       (text: string) => {
@@ -62,14 +64,23 @@ const UploadUi = () => {
 
           {isSelected && selectedFile ? (
             <div>
-              <p>Filename: {selectedFile.name}</p>{" "}
-              <p>Filetype: {selectedFile.type}</p>
-              <p>Size in bytes: {selectedFile.size}</p>
+              <br />
+              <p>
+                Filename: <strong>{selectedFile.name}</strong>
+              </p>{" "}
+              <p>
+                Filetype: <strong>{selectedFile.type}</strong>
+              </p>
+              <p>
+                Size in bytes: <strong>{selectedFile.size}</strong>
+              </p>
             </div>
           ) : (
             <p>Select a file to show details</p>
           )}
+
           {error && <div>{error}</div>}
+
           <div>
             <button
               className="btn btn-primary upload-ui__utility-btn"
@@ -78,6 +89,7 @@ const UploadUi = () => {
               Submit
             </button>
           </div>
+
           <div className="upload-ui__list">
             {extractedText && (
               <div>
