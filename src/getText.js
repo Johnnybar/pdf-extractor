@@ -1,5 +1,6 @@
-import * as pdfjsLib from "pdfjs-dist/build/pdf.js";
-pdfjsLib.GlobalWorkerOptions.workerSrc = "/js/pdf.worker.min.js";
+import * as pdfjsLib from "pdfjs-dist";
+import pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 const getText = (file) => {
   const fileObjectUrl = URL.createObjectURL(file);
