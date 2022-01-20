@@ -1,15 +1,12 @@
 import "./App.scss";
 import UploadUi from "./UploadUi";
+import logo from "./logo.svg";
 
 function App() {
   return (
     <>
       <header className="header">
-        <img
-          src="https://uploads-ssl.webflow.com/6172da8d54a8c3c4ec34b64c/617ea6e061b42b8a1a8cca74_contract-hero-logo.svg"
-          alt=""
-          className="header__logo"
-        />
+        <img src={logo} alt="" className="header__logo" />
       </header>
       <div className="content-wrapper">
         <UploadUi />
