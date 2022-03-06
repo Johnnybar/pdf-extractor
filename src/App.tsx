@@ -13,7 +13,7 @@ function App() {
       </div>
       <footer className="footer">
         <p className="footer__text text-center">
-          ContractHero - Gewinnen Sie die Kontrolle zurück
+          PDF Extractor - Copyright © Jonathan Bareket 2022
         </p>
       </footer>
     </>

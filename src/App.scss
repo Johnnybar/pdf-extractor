@@ -14,7 +14,7 @@
   background: $pdf-extractor-light-blue;
   &__logo {
     margin: toRem(10);
-    max-width: 100%;
+    max-width: toRem(200);
     height: auto;
   }
 }
