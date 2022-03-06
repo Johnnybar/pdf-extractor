@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/pdf-extractor/static/css/main.1c201c2a.css",
+    "main.js": "/pdf-extractor/static/js/main.ebfbc3d0.js",
+    "static/media/logo.svg": "/pdf-extractor/static/media/logo.87d8900f4dd11b9a672b3049d01ecbde.svg",
+    "index.html": "/pdf-extractor/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.1c201c2a.css",
+    "static/js/main.ebfbc3d0.js"
+  ]
+}
